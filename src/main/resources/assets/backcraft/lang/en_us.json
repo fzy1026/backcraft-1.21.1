@@ -7,5 +7,6 @@
   "backcraft.configuration.magicNumberIntroduction": "Magic Number Text",
   "backcraft.configuration.magicNumber": "Magic Number",
   "item.backcraft.almond_water": "Almond Water",
-  "itemGroup.backcraft_tab": "Backcraft"
+  "itemGroup.backcraft_tab": "Backcraft",
+  "block.backcraft.yellow_wall": "Yellow Wall"
 }

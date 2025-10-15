@@ -7,5 +7,6 @@
   "backcraft.configuration.magicNumberIntroduction": "魔数文本",
   "backcraft.configuration.magicNumber": "魔数",
   "item.backcraft.almond_water": "杏仁水",
-  "itemGroup.backcraft_tab": "我的后世"
+  "itemGroup.backcraft_tab": "我的后世",
+  "block.backcraft.yellow_wall": "黄色墙壁"
 }

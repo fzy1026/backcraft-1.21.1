@@ -1,6 +1,7 @@
 package com.cham.backcraft.item;
 
 import com.cham.backcraft.Backcraft;
+import com.cham.backcraft.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -23,6 +24,7 @@ public class ModCreativeModTabs {
                     .title(Component.translatable("itemGroup.backcraft_tab"))
                     .displayItems((parameters,output)->{
                         output.accept(ModItems.ALMOND_WATER);
+                        output.accept(ModBlocks.YELLOW_WALL);
                     })
                     .build());
 }

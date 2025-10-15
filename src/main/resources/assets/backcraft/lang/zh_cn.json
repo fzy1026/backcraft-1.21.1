@@ -1,0 +1,10 @@
+{
+  "backcraft.configuration.title": "我的后世配置项",
+  "backcraft.configuration.section.backcraft.common.toml": "我的后世配置项",
+  "backcraft.configuration.section.backcraft.common.toml.title": "我的后世配置项",
+  "backcraft.configuration.items": "物品列表",
+  "backcraft.configuration.logDirtBlock": "日志泥土方块",
+  "backcraft.configuration.magicNumberIntroduction": "魔数文本",
+  "backcraft.configuration.magicNumber": "魔数",
+  "item.backcraft.almond_water": "杏仁水"
+}

@@ -6,5 +6,6 @@
   "backcraft.configuration.logDirtBlock": "日志泥土方块",
   "backcraft.configuration.magicNumberIntroduction": "魔数文本",
   "backcraft.configuration.magicNumber": "魔数",
-  "item.backcraft.almond_water": "杏仁水"
+  "item.backcraft.almond_water": "杏仁水",
+  "itemGroup.backcraft_tab": "我的后世"
 }

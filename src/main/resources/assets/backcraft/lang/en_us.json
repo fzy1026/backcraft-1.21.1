@@ -6,5 +6,6 @@
   "backcraft.configuration.logDirtBlock": "Log Dirt Block",
   "backcraft.configuration.magicNumberIntroduction": "Magic Number Text",
   "backcraft.configuration.magicNumber": "Magic Number",
-  "item.backcraft.almond_water": "Almond Water"
+  "item.backcraft.almond_water": "Almond Water",
+  "itemGroup.backcraft_tab": "Backcraft"
 }

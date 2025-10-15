@@ -1,0 +1,13 @@
+{
+  "itemGroup.backcraft": "Example Mod Tab",
+  "block.backcraft.example_block": "Example Block",
+  "item.backcraft.example_item": "Example Item",
+
+  "backcraft.configuration.title": "Backcraft Configs",
+  "backcraft.configuration.section.backcraft.common.toml": "Backcraft Configs",
+  "backcraft.configuration.section.backcraft.common.toml.title": "Backcraft Configs",
+  "backcraft.configuration.items": "Item List",
+  "backcraft.configuration.logDirtBlock": "Log Dirt Block",
+  "backcraft.configuration.magicNumberIntroduction": "Magic Number Text",
+  "backcraft.configuration.magicNumber": "Magic Number"
+}

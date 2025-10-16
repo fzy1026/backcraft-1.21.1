@@ -25,6 +25,10 @@ public class ModCreativeModTabs {
                     .displayItems((parameters,output)->{
                         output.accept(ModItems.ALMOND_WATER);
                         output.accept(ModBlocks.YELLOW_WALL);
+                        output.accept(ModItems.DUMB_GUM);
+                        output.accept(ModItems.A_BOX_OF_DUMB_GUM);
+                        output.accept(ModItems.FIRE_SALT);
+                        output.accept(ModBlocks.FIRE_SALT_ORE);
                     })
                     .build());
 }

@@ -7,7 +7,7 @@ import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
 public class ModEnUsLangProvider extends LanguageProvider {
-    public ModEnUsLangProvider(Packoutput output){
+    public ModEnUsLangProvider(PackOutput output){
         super(output, Backcraft.MODID,"en_us");
     }
 

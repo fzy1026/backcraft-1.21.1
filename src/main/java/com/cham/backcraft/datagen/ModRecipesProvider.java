@@ -23,7 +23,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
 
     @Override
     protected void buildRecipes(RecipeOutput recipeOutput){
-        oreBlasting(recipeOutput,FIRE_SALT,RecipeCategory.MISC,ModItems.FIRE_SALT,0.5f,200,"fire_salt");
+        oreBlasting(recipeOutput,FIRE_SALT,RecipeCategory.MISC,ModItems.FIRE_SALT,0.5f,100,"fire_salt");
         oreSmelting(recipeOutput,FIRE_SALT,RecipeCategory.MISC,ModItems.FIRE_SALT,0.5f,200,"fire_salt");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.FIRE_SALT_BLOCK)

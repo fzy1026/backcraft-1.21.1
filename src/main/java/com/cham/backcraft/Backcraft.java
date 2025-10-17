@@ -1,9 +1,12 @@
 package com.cham.backcraft;
 
 import com.cham.backcraft.block.ModBlocks;
+import com.cham.backcraft.entity.ModEntityRegister;
+import com.cham.backcraft.entity.Smiler;
 import com.cham.backcraft.item.ModCreativeModTabs;
 import com.cham.backcraft.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -28,11 +31,19 @@ public class Backcraft {
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
 
+    private void addEntityAttributes(EntityAttributeCreationEvent event){
+        event.put(
+                ModEntityRegister.getSmilerType(),
+                Smiler.createAttributes().build()
+        );
+    }
+
     public Backcraft(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
         ModItems.register(modEventBus);
         ModCreativeModTabs.register(modEventBus);
-        ModBlocks.register(modEventBus);
+        ModEntityRegister.getRegister().register(modEventBus);
+        modEventBus.addListener(this::addEntityAttributes);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (Backcraft) to respond directly to events.
@@ -62,18 +73,18 @@ public class Backcraft {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
 
         if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS){
-            event.accept(ModBlocks.FIRE_SALT_ORE);
+            event.accept(ModBlocks.FIRE_SALT_ORE.get());
         }
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
-            event.accept(ModItems.ALMOND_WATER);
-            event.accept(ModItems.DUMB_GUM);
-            event.accept(ModItems.A_BOX_OF_DUMB_GUM);
+            event.accept(ModItems.ALMOND_WATER.get());
+            event.accept(ModItems.DUMB_GUM.get());
+            event.accept(ModItems.A_BOX_OF_DUMB_GUM.get());
         }
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(ModBlocks.YELLOW_WALL);
+            event.accept(ModBlocks.YELLOW_WALL.get());
         }
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
-            event.accept(ModItems.FIRE_SALT);
+            event.accept(ModItems.FIRE_SALT.get());
         }
     }
 

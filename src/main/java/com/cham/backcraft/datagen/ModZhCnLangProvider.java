@@ -2,8 +2,10 @@ package com.cham.backcraft.datagen;
 
 import com.cham.backcraft.Backcraft;
 import com.cham.backcraft.block.ModBlocks;
+import com.cham.backcraft.entity.SmilerModel;
 import com.cham.backcraft.item.ModItems;
 import net.minecraft.data.PackOutput;
+import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
 public class ModZhCnLangProvider extends LanguageProvider {

@@ -3,11 +3,9 @@ package com.cham.backcraft.item;
 import com.cham.backcraft.Backcraft;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -28,7 +26,7 @@ public class ModItems {
                     .nutrition(4)
                     .alwaysEdible()
                     .fast()
-                    .effect(new MobEffectInstance(MobEffects.BLINDNESS,500,0),1.0F)
+                    .effect(new MobEffectInstance(MobEffects.BLINDNESS, 500, 0), 1.0F)
                     .build()
             )));
     /*
@@ -42,10 +40,10 @@ public class ModItems {
     .build()收尾，构建
      */
     public static final DeferredItem<Item> FIRE_SALT =
-            ITEMS.register("fire_salt",()->new Item(new Item.Properties()));
+            ITEMS.register("fire_salt", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> A_BOX_OF_DUMB_GUM =
-            ITEMS.register("a_box_of_dumb_gum",()->new Item(new Item.Properties()));
+            ITEMS.register("a_box_of_dumb_gum", () -> new Item(new Item.Properties()));
     public static final DeferredItem<SwordItem> CROWBAR =
-            ITEMS.register("crowbar",()->new SwordItem(Tiers.IRON,new Item.Properties().attributes(SwordItem.createAttributes(Tiers.IRON,7,-3.5F))));
+            ITEMS.register("crowbar", () -> new SwordItem(Tiers.IRON, new Item.Properties().attributes(SwordItem.createAttributes(Tiers.IRON, 7, -3.5F))));
 
 }

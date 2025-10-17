@@ -6,6 +6,9 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.Tiers;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -42,6 +45,7 @@ public class ModItems {
             ITEMS.register("fire_salt",()->new Item(new Item.Properties()));
     public static final DeferredItem<Item> A_BOX_OF_DUMB_GUM =
             ITEMS.register("a_box_of_dumb_gum",()->new Item(new Item.Properties()));
-
+    public static final DeferredItem<SwordItem> CROWBAR =
+            ITEMS.register("crowbar",()->new SwordItem(Tiers.IRON,new Item.Properties().attributes(SwordItem.createAttributes(Tiers.IRON,7,-3.5F))));
 
 }

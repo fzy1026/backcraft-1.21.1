@@ -29,6 +29,8 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.A_BOX_OF_DUMB_GUM);
                         output.accept(ModItems.FIRE_SALT);
                         output.accept(ModBlocks.FIRE_SALT_ORE);
+                        output.accept(ModItems.CROWBAR);
+                        output.accept(ModBlocks.FIRE_SALT_BLOCK);
                     })
                     .build());
 }

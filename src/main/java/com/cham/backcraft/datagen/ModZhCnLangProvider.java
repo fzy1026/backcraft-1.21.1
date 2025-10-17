@@ -17,6 +17,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.DUMB_GUM.get(),"傻瓜口香糖");
         add(ModItems.FIRE_SALT.get(),"火盐");
         add(ModItems.ALMOND_WATER.get(),"杏仁水");
+        add(ModItems.CROWBAR.get(),"撬棍");
+
 
         add(ModBlocks.FIRE_SALT_ORE.get(),"火盐矿石");
         add(ModBlocks.YELLOW_WALL.get(),"黄色墙壁");

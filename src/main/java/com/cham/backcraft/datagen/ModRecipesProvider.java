@@ -6,6 +6,7 @@ import com.cham.backcraft.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
@@ -34,15 +35,42 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(ModItems.FIRE_SALT), has(ModItems.FIRE_SALT))
                 .save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.CROWBAR)
+                .pattern("## ")
+                .pattern(" # ")
+                .pattern(" # ")
+                .define('#', Items.IRON_INGOT)
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .save(recipeOutput,"crowbar1");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.CROWBAR)
+                .pattern(" ##")
+                .pattern(" # ")
+                .pattern(" # ")
+                .define('#', Items.IRON_INGOT)
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .save(recipeOutput,"crowbar2");
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS,ModItems.FIRE_SALT,9)
                 .requires(ModBlocks.FIRE_SALT_BLOCK)
                 .unlockedBy(getHasName(ModBlocks.FIRE_SALT_BLOCK),has(ModBlocks.FIRE_SALT_BLOCK))
+                .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC,ModItems.A_BOX_OF_DUMB_GUM,1)
+                .requires(ModItems.DUMB_GUM,3)
+                .unlockedBy(getHasName(ModItems.DUMB_GUM),has(ModItems.DUMB_GUM))
                 .save(recipeOutput);
     }
 
     //熔炉配方生成
     protected static void oreSmelting(
-            RecipeOutput recipeOutput, List<ItemLike> ingredients, RecipeCategory category, ItemLike result, float experience, int cookingTime, String group
+            RecipeOutput recipeOutput,
+            List<ItemLike> ingredients,
+            RecipeCategory category,
+            ItemLike result,
+            float experience,
+            int cookingTime,
+            String group
     ) {
         oreCooking(
                 recipeOutput,
@@ -60,8 +88,14 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
 
     //高炉配方生成
     protected static void oreBlasting(
-            RecipeOutput recipeOutput, List<ItemLike> ingredients, RecipeCategory category, ItemLike result, float experience, int cookingTime, String group
-    ) {
+            RecipeOutput recipeOutput,
+            List<ItemLike> ingredients,
+            RecipeCategory category,
+            ItemLike result,
+            float experience,
+            int cookingTime,
+            String group)
+    {
         oreCooking(
                 recipeOutput,
                 RecipeSerializer.BLASTING_RECIPE,

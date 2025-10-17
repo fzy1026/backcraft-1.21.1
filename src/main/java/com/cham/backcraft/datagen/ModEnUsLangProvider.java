@@ -17,10 +17,12 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.DUMB_GUM.get(),"Dumb Gum");
         add(ModItems.FIRE_SALT.get(),"Fire Salt");
         add(ModItems.ALMOND_WATER.get(),"Almond Water");
+        add(ModItems.CROWBAR.get(),"Crowbar");
 
         add(ModBlocks.FIRE_SALT_ORE.get(),"Fire Salt Ore");
         add(ModBlocks.YELLOW_WALL.get(),"Yellow Wall");
         add(ModBlocks.FIRE_SALT_BLOCK.get(),"Fire Salt Block");
+
 
 
         add("itemGroup.backcraft_tab","Backcraft");

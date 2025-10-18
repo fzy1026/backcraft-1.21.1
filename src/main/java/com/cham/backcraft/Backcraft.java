@@ -90,6 +90,9 @@ public class Backcraft {
         if(event.getTabKey() == CreativeModeTabs.SPAWN_EGGS){
             event.accept(ModItems.SMILER_SPAWN_EGG);
         }
+        if(event.getTabKey() == CreativeModeTabs.COMBAT){
+            event.accept(ModItems.CROWBAR);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

@@ -23,7 +23,8 @@ public class ModBlocks {
             registerBlock("fire_salt_ore",()->new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_ORE)));
     public static final DeferredBlock<Block> FIRE_SALT_BLOCK =
             registerBlock("fire_salt_block",()->new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
-
+    public static final DeferredBlock<Block> SKELETON_BLOCK =
+            registerBlock("skeleton_block",()->new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.BONE_BLOCK)));
 
     private static <T extends Block> void registerBlockItems(String name, DeferredBlock<T> block){
         ModItems.ITEMS.register(name,()->new BlockItem(block.get(),new Item.Properties()));

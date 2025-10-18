@@ -6,6 +6,7 @@ import com.cham.backcraft.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
@@ -59,6 +60,32 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC,ModItems.A_BOX_OF_DUMB_GUM,1)
                 .requires(ModItems.DUMB_GUM,3)
                 .unlockedBy(getHasName(ModItems.DUMB_GUM),has(ModItems.DUMB_GUM))
+                .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC,ModItems.DUMB_GUM,1)
+                .requires(Items.SLIME_BALL,1)
+                .requires(Items.SUGAR,1)
+                .requires(Items.SPIDER_EYE,1)
+                .unlockedBy(getHasName(Items.SLIME_BALL),has(Items.SLIME_BALL))
+                .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC,ModItems.SMILER_SPAWN_EGG,1)
+                .requires(Items.BONE,3)
+                .requires(Items.ROTTEN_FLESH,3)
+                .unlockedBy(getHasName(Items.BONE),has(Items.BONE))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SKELETON_BLOCK)
+                .pattern("# #")
+                .pattern("###")
+                .pattern("# #")
+                .define('#', Items.BONE)
+                .unlockedBy(getHasName(Items.BONE), has(Items.BONE))
+                .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC,Items.BONE,7)
+                .requires(ModBlocks.SKELETON_BLOCK,1)
+                .unlockedBy(getHasName(ModBlocks.SKELETON_BLOCK),has(ModBlocks.SKELETON_BLOCK))
                 .save(recipeOutput);
     }
 

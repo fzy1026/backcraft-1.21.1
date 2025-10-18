@@ -17,6 +17,7 @@ import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import net.neoforged.fml.common.Mod;
 
 import java.util.Set;
 
@@ -28,6 +29,7 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
     @Override
     protected void generate(){
         dropSelf(ModBlocks.YELLOW_WALL.get());
+        dropSelf(ModBlocks.SKELETON_BLOCK.get());
         dropSelf(ModBlocks.FIRE_SALT_BLOCK.get());
         add(ModBlocks.FIRE_SALT_ORE.get(),
                 block -> createMultiplyOreDrop(ModBlocks.FIRE_SALT_ORE.get(),ModItems.FIRE_SALT.get(),1,4));

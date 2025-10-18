@@ -83,6 +83,7 @@ public class Backcraft {
         }
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.YELLOW_WALL.get());
+            event.accept(ModBlocks.SKELETON_BLOCK.get());
         }
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
             event.accept(ModItems.FIRE_SALT.get());

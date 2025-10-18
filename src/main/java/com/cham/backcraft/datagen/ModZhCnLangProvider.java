@@ -24,6 +24,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.FIRE_SALT_ORE.get(),"火盐矿石");
         add(ModBlocks.YELLOW_WALL.get(),"黄色墙壁");
         add(ModBlocks.FIRE_SALT_BLOCK.get(),"火盐块");
+        add(ModBlocks.SKELETON_BLOCK.get(),"骨架方块");
+
 
         add(ModEntityRegister.SMILER.get(),"笑魇");
         add(ModItems.SMILER_SPAWN_EGG.get(),"笑魇刷怪蛋");

@@ -23,6 +23,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.FIRE_SALT_ORE.get(),"Fire Salt Ore");
         add(ModBlocks.YELLOW_WALL.get(),"Yellow Wall");
         add(ModBlocks.FIRE_SALT_BLOCK.get(),"Fire Salt Block");
+        add(ModBlocks.SKELETON_BLOCK.get(),"Skeleton Block");
+
 
         add(ModEntityRegister.SMILER.get(),"Smiler");
         add(ModItems.SMILER_SPAWN_EGG.get(),"Smiler Spawn Egg");

@@ -1,10 +1,12 @@
 package com.cham.backcraft.item;
 
 import com.cham.backcraft.Backcraft;
+import com.cham.backcraft.entity.ModEntityRegister;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tiers;
 import net.neoforged.bus.api.IEventBus;
@@ -29,6 +31,9 @@ public class ModItems {
                     .effect(new MobEffectInstance(MobEffects.BLINDNESS, 500, 0), 1.0F)
                     .build()
             )));
+    public static final DeferredItem<SpawnEggItem> SMILER_SPAWN_EGG =
+            ITEMS.register("smiler_spawn_egg", () -> new SpawnEggItem(ModEntityRegister.SMILER.get(), 0x000000, 0xFFFFFF, new Item.Properties()));
+
     /*
     食物相关构建函数：
     .nutrition(int nutrition) 回复的饱食度

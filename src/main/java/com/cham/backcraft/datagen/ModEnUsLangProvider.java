@@ -2,6 +2,7 @@ package com.cham.backcraft.datagen;
 
 import com.cham.backcraft.Backcraft;
 import com.cham.backcraft.block.ModBlocks;
+import com.cham.backcraft.entity.ModEntityRegister;
 import com.cham.backcraft.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
@@ -22,6 +23,9 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.FIRE_SALT_ORE.get(),"Fire Salt Ore");
         add(ModBlocks.YELLOW_WALL.get(),"Yellow Wall");
         add(ModBlocks.FIRE_SALT_BLOCK.get(),"Fire Salt Block");
+
+        add(ModEntityRegister.SMILER.get(),"Smiler");
+        add(ModItems.SMILER_SPAWN_EGG.get(),"Smiler Spawn Egg");
 
 
 

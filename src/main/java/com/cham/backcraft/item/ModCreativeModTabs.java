@@ -31,6 +31,7 @@ public class ModCreativeModTabs {
                         output.accept(ModBlocks.FIRE_SALT_ORE);
                         output.accept(ModItems.CROWBAR);
                         output.accept(ModBlocks.FIRE_SALT_BLOCK);
+                        output.accept(ModItems.SMILER_SPAWN_EGG);
                     })
                     .build());
 }

@@ -1,4 +1,4 @@
-package com.cham.backcraft.entity;
+package com.cham.backcraft.entity.smiler;
 
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;

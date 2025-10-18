@@ -1,7 +1,7 @@
 package com.cham.backcraft;
 
-import com.cham.backcraft.entity.SmilerModel;
-import com.cham.backcraft.entity.SmilerRenderer;
+import com.cham.backcraft.entity.smiler.SmilerModel;
+import com.cham.backcraft.entity.smiler.SmilerRenderer;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;

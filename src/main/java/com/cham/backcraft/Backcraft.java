@@ -2,7 +2,7 @@ package com.cham.backcraft;
 
 import com.cham.backcraft.block.ModBlocks;
 import com.cham.backcraft.entity.ModEntityRegister;
-import com.cham.backcraft.entity.Smiler;
+import com.cham.backcraft.entity.smiler.Smiler;
 import com.cham.backcraft.item.ModCreativeModTabs;
 import com.cham.backcraft.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -40,9 +40,10 @@ public class Backcraft {
 
     public Backcraft(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
+        ModEntityRegister.register(modEventBus);
+        ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
         ModCreativeModTabs.register(modEventBus);
-        ModEntityRegister.getRegister().register(modEventBus);
         modEventBus.addListener(this::addEntityAttributes);
 
         // Register ourselves for server and other game events we are interested in.
@@ -85,6 +86,9 @@ public class Backcraft {
         }
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
             event.accept(ModItems.FIRE_SALT.get());
+        }
+        if(event.getTabKey() == CreativeModeTabs.SPAWN_EGGS){
+            event.accept(ModItems.SMILER_SPAWN_EGG);
         }
     }
 

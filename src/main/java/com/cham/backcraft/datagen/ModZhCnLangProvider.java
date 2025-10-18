@@ -2,10 +2,9 @@ package com.cham.backcraft.datagen;
 
 import com.cham.backcraft.Backcraft;
 import com.cham.backcraft.block.ModBlocks;
-import com.cham.backcraft.entity.SmilerModel;
+import com.cham.backcraft.entity.ModEntityRegister;
 import com.cham.backcraft.item.ModItems;
 import net.minecraft.data.PackOutput;
-import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
 public class ModZhCnLangProvider extends LanguageProvider {
@@ -25,6 +24,9 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.FIRE_SALT_ORE.get(),"火盐矿石");
         add(ModBlocks.YELLOW_WALL.get(),"黄色墙壁");
         add(ModBlocks.FIRE_SALT_BLOCK.get(),"火盐块");
+
+        add(ModEntityRegister.SMILER.get(),"笑魇");
+        add(ModItems.SMILER_SPAWN_EGG.get(),"笑魇刷怪蛋");
 
         add("itemGroup.backcraft_tab","我的后世");
 

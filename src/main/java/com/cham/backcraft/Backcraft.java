@@ -94,6 +94,9 @@ public class Backcraft {
         if(event.getTabKey() == CreativeModeTabs.COMBAT){
             event.accept(ModItems.CROWBAR);
         }
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
+            event.accept(ModItems.SMILER_TOOTH);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

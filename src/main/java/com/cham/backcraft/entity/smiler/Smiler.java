@@ -21,7 +21,7 @@ public class Smiler extends PathfinderMob {
     @Override
     protected void registerGoals(){
         this.goalSelector.addGoal(0,new FloatGoal(this));
-        this.goalSelector.addGoal(1,new MeleeAttackGoal(this,2D,true));
+        this.goalSelector.addGoal(1,new MeleeAttackGoal(this,1.2D,true));
         this.goalSelector.addGoal(3,new LookAtPlayerGoal(this, Player.class,16.0F));
         this.goalSelector.addGoal(4,new RandomLookAroundGoal(this));
 

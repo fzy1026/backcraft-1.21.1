@@ -5,6 +5,7 @@ import com.cham.backcraft.block.ModBlocks;
 import com.cham.backcraft.entity.ModEntityRegister;
 import com.cham.backcraft.item.ModItems;
 import net.minecraft.data.PackOutput;
+import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
 public class ModEnUsLangProvider extends LanguageProvider {
@@ -19,6 +20,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.FIRE_SALT.get(),"Fire Salt");
         add(ModItems.ALMOND_WATER.get(),"Almond Water");
         add(ModItems.CROWBAR.get(),"Crowbar");
+        add(ModItems.SMILER_TOOTH.get(),"Smiler Tooth");
 
         add(ModBlocks.FIRE_SALT_ORE.get(),"Fire Salt Ore");
         add(ModBlocks.YELLOW_WALL.get(),"Yellow Wall");

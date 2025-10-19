@@ -6,7 +6,6 @@ import com.cham.backcraft.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
@@ -24,9 +23,9 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
     public static final List<ItemLike> FIRE_SALT = List.of(ModBlocks.FIRE_SALT_ORE);
 
     @Override
-    protected void buildRecipes(RecipeOutput recipeOutput){
-        oreBlasting(recipeOutput,FIRE_SALT,RecipeCategory.MISC,ModItems.FIRE_SALT,0.5f,100,"fire_salt");
-        oreSmelting(recipeOutput,FIRE_SALT,RecipeCategory.MISC,ModItems.FIRE_SALT,0.5f,200,"fire_salt");
+    protected void buildRecipes(RecipeOutput recipeOutput) {
+        oreBlasting(recipeOutput, FIRE_SALT, RecipeCategory.MISC, ModItems.FIRE_SALT, 0.5f, 100, "fire_salt");
+        oreSmelting(recipeOutput, FIRE_SALT, RecipeCategory.MISC, ModItems.FIRE_SALT, 0.5f, 200, "fire_salt");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.FIRE_SALT_BLOCK)
                 .pattern("###")
@@ -42,7 +41,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .pattern(" # ")
                 .define('#', Items.IRON_INGOT)
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
-                .save(recipeOutput,"crowbar1");
+                .save(recipeOutput, "crowbar1");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.CROWBAR)
                 .pattern(" ##")
@@ -50,29 +49,34 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .pattern(" # ")
                 .define('#', Items.IRON_INGOT)
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
-                .save(recipeOutput,"crowbar2");
+                .save(recipeOutput, "crowbar2");
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS,ModItems.FIRE_SALT,9)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModItems.FIRE_SALT, 9)
                 .requires(ModBlocks.FIRE_SALT_BLOCK)
-                .unlockedBy(getHasName(ModBlocks.FIRE_SALT_BLOCK),has(ModBlocks.FIRE_SALT_BLOCK))
+                .unlockedBy(getHasName(ModBlocks.FIRE_SALT_BLOCK), has(ModBlocks.FIRE_SALT_BLOCK))
                 .save(recipeOutput);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC,ModItems.A_BOX_OF_DUMB_GUM,1)
-                .requires(ModItems.DUMB_GUM,3)
-                .unlockedBy(getHasName(ModItems.DUMB_GUM),has(ModItems.DUMB_GUM))
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.A_BOX_OF_DUMB_GUM, 1)
+                .requires(ModItems.DUMB_GUM, 3)
+                .unlockedBy(getHasName(ModItems.DUMB_GUM), has(ModItems.DUMB_GUM))
                 .save(recipeOutput);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC,ModItems.DUMB_GUM,1)
-                .requires(Items.SLIME_BALL,1)
-                .requires(Items.SUGAR,1)
-                .requires(Items.SPIDER_EYE,1)
-                .unlockedBy(getHasName(Items.SLIME_BALL),has(Items.SLIME_BALL))
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BONE_MEAL, 1)
+                .requires(ModItems.SMILER_TOOTH, 1)
+                .unlockedBy(getHasName(ModItems.SMILER_TOOTH), has(ModItems.SMILER_TOOTH))
                 .save(recipeOutput);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC,ModItems.SMILER_SPAWN_EGG,1)
-                .requires(Items.BONE,3)
-                .requires(Items.ROTTEN_FLESH,3)
-                .unlockedBy(getHasName(Items.BONE),has(Items.BONE))
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.DUMB_GUM, 1)
+                .requires(Items.SLIME_BALL, 1)
+                .requires(Items.SUGAR, 1)
+                .requires(Items.SPIDER_EYE, 1)
+                .unlockedBy(getHasName(Items.SLIME_BALL), has(Items.SLIME_BALL))
+                .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.SMILER_SPAWN_EGG, 1)
+                .requires(Items.BONE, 3)
+                .requires(Items.ROTTEN_FLESH, 3)
+                .unlockedBy(getHasName(Items.BONE), has(Items.BONE))
                 .save(recipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SKELETON_BLOCK)
@@ -83,9 +87,9 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(Items.BONE), has(Items.BONE))
                 .save(recipeOutput);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC,Items.BONE,7)
-                .requires(ModBlocks.SKELETON_BLOCK,1)
-                .unlockedBy(getHasName(ModBlocks.SKELETON_BLOCK),has(ModBlocks.SKELETON_BLOCK))
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BONE, 7)
+                .requires(ModBlocks.SKELETON_BLOCK, 1)
+                .unlockedBy(getHasName(ModBlocks.SKELETON_BLOCK), has(ModBlocks.SKELETON_BLOCK))
                 .save(recipeOutput);
     }
 
@@ -121,8 +125,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
             ItemLike result,
             float experience,
             int cookingTime,
-            String group)
-    {
+            String group) {
         oreCooking(
                 recipeOutput,
                 RecipeSerializer.BLASTING_RECIPE,

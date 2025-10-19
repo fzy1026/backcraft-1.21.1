@@ -33,7 +33,7 @@ public class ModCreativeModTabs {
                         output.accept(ModBlocks.FIRE_SALT_BLOCK);
                         output.accept(ModItems.SMILER_SPAWN_EGG);
                         output.accept(ModBlocks.SKELETON_BLOCK);
-
+                        output.accept(ModItems.SMILER_TOOTH);
                     })
                     .build());
 }

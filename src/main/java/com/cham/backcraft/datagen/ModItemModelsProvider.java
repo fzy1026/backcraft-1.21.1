@@ -18,6 +18,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.ALMOND_WATER.get());
         basicItem(ModItems.A_BOX_OF_DUMB_GUM.get());
         basicItem(ModItems.CROWBAR.get());
+        basicItem(ModItems.SMILER_TOOTH.get());
 
         withExistingParent(ModItems.SMILER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }

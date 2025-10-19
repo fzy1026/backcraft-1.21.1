@@ -35,7 +35,7 @@ public class ModItems {
                     .build()
             )));
     public static final DeferredItem<SpawnEggItem> SMILER_SPAWN_EGG =
-            ITEMS.register("smiler_spawn_egg", () -> new SpawnEggItem(ModEntityRegister.SMILER.get(), 0x000000, 0xFFFFFF, new Item.Properties()));
+            ITEMS.register("smiler_spawn_egg", () -> new SpawnEggItem(ModEntityRegister.SMILER.get(), 0x000000, 0xffe0e2, new Item.Properties()));
 
     /*
     食物相关构建函数：
@@ -53,5 +53,6 @@ public class ModItems {
             ITEMS.register("a_box_of_dumb_gum", () -> new Item(new Item.Properties()));
     public static final DeferredItem<SwordItem> CROWBAR =
             ITEMS.register("crowbar", () -> new SwordItem(Tiers.IRON, new Item.Properties().attributes(SwordItem.createAttributes(Tiers.IRON, 7, -3.5F))));
-
+    public static final DeferredItem<Item> SMILER_TOOTH =
+            ITEMS.register("smiler_tooth",()->new Item(new Item.Properties()));
 }

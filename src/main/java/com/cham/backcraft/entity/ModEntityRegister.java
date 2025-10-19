@@ -15,7 +15,7 @@ public class ModEntityRegister {
 
     public static final DeferredHolder<EntityType<?>, EntityType<Smiler>> SMILER =
             ENTITIES.register("smiler", () -> EntityType.Builder.of(Smiler::new, MobCategory.MONSTER)
-                    .sized(1f, 2f)
+                    .sized(0.7f, 1.7f)
                     .build("smiler"));
 
 

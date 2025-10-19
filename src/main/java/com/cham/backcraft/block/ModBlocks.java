@@ -6,7 +6,10 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -23,8 +26,13 @@ public class ModBlocks {
             registerBlock("fire_salt_ore",()->new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_ORE)));
     public static final DeferredBlock<Block> FIRE_SALT_BLOCK =
             registerBlock("fire_salt_block",()->new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
-    public static final DeferredBlock<SkeletonBlockType> SKELETON_BLOCK =
-            registerBlock("skeleton_block",()->new SkeletonBlockType(BlockBehaviour.Properties.ofFullCopy(Blocks.BONE_BLOCK)));
+    public static final DeferredBlock<SkeletonBlock> SKELETON_BLOCK =
+            registerBlock("skeleton_block",()->new SkeletonBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.SAND)                    .instrument(NoteBlockInstrument.XYLOPHONE)
+                    .requiresCorrectToolForDrops()
+                    .strength(2.0F)
+                    .sound(SoundType.BONE_BLOCK)
+            ));
 
     private static <T extends Block> void registerBlockItems(String name, DeferredBlock<T> block){
         ModItems.ITEMS.register(name,()->new BlockItem(block.get(),new Item.Properties()));
@@ -49,7 +57,7 @@ public class ModBlocks {
     .lightLevel(ToIntFunction<BlockState> lightEmission) 设定光亮等级？用法中有混淆 看不懂
     .strength(float destroyTime, float explosionResistance) 强度 设定挖掘时间与爆炸抗性
     .strength(float strength) 同上
-    .ignitedByLava() 不会被熔岩破坏
+    .ignitedByLava() 会被熔岩点燃
     .requiresCorrectToolForDrops() 需要正确工具挖掘才会掉落
     .destroyTime(float destroyTime) 设定挖掘时间
     .explosionResistance(float explosionResistance) 设定爆炸抗性

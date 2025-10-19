@@ -3,15 +3,13 @@ package com.cham.backcraft.block;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class SkeletonBlockType extends Block {
-    public SkeletonBlockType(Properties properties) {
+public class SkeletonBlock extends Block {
+    public SkeletonBlock(Properties properties) {
         super(properties);
     }
 
@@ -83,6 +81,19 @@ public class SkeletonBlockType extends Block {
         return SHAPE;
     }
 /*
+    @Override
+    public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
+        Blocks.BONE_BLOCK.animateTick(Blocks.BONE_BLOCK.defaultBlockState(),level,pos,random);
+    }
+
+    @Override
+    public void stepOn(Level level, BlockPos pos, BlockState state, Entity entity) {
+        if(level.isClientSide){
+            Blocks.BONE_BLOCK.stepOn(level,pos,state,entity);
+        }
+    }
+*/
+    /*
     protected VoxelShape getShape(StateDefinition<Block, BlockState> stateDefinition, BlockGetter blockGetter, BlockPos blockPos, CollisionContext context) {
         return SHAPE;
     }

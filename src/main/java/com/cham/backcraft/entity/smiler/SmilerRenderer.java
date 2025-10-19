@@ -11,6 +11,7 @@ public class SmilerRenderer extends MobRenderer<Mob, SmilerModel<Mob>> {
 
     public SmilerRenderer(EntityRendererProvider.Context context) {
         super(context, new SmilerModel<>(context.bakeLayer(SmilerModel.LAYER_LOCATION)), 0.0F);
+        this.addLayer(new SmilerGlowLayer(this));
     }
 
     @Override

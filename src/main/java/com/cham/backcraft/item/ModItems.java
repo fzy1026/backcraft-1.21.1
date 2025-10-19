@@ -21,8 +21,8 @@ public class ModItems {
         ITEMS.register(eventBus);
     }
 
-    public static final DeferredItem<Item> ALMOND_WATER =
-            ITEMS.register("almond_water", () -> new Item(new Item.Properties()));
+    //public static final DeferredItem<Item> ALMOND_WATER =
+            //ITEMS.register("almond_water", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> DUMB_GUM =
             ITEMS.register("dumb_gum", () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .nutrition(4)

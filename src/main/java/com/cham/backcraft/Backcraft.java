@@ -1,10 +1,12 @@
 package com.cham.backcraft;
 
 import com.cham.backcraft.block.ModBlocks;
+import com.cham.backcraft.effect.ModMobEffects;
 import com.cham.backcraft.entity.ModEntityRegister;
 import com.cham.backcraft.entity.smiler.Smiler;
 import com.cham.backcraft.item.ModCreativeModTabs;
 import com.cham.backcraft.item.ModItems;
+import com.cham.backcraft.item.ModPotions;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import org.slf4j.Logger;
@@ -40,10 +42,12 @@ public class Backcraft {
 
     public Backcraft(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
+        ModMobEffects.register(modEventBus);
         ModEntityRegister.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
         ModCreativeModTabs.register(modEventBus);
+        ModPotions.register(modEventBus);
         modEventBus.addListener(this::addEntityAttributes);
 
         // Register ourselves for server and other game events we are interested in.
@@ -77,7 +81,7 @@ public class Backcraft {
             event.accept(ModBlocks.FIRE_SALT_ORE.get());
         }
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
-            event.accept(ModItems.ALMOND_WATER.get());
+            //event.accept(ModItems.ALMOND_WATER.get());
             event.accept(ModItems.DUMB_GUM.get());
             event.accept(ModItems.A_BOX_OF_DUMB_GUM.get());
         }

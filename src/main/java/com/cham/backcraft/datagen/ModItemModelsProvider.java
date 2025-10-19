@@ -15,7 +15,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
     protected void registerModels() {
         basicItem(ModItems.FIRE_SALT.get());
         basicItem(ModItems.DUMB_GUM.get());
-        basicItem(ModItems.ALMOND_WATER.get());
+        //basicItem(ModItems.ALMOND_WATER.get());
         basicItem(ModItems.A_BOX_OF_DUMB_GUM.get());
         basicItem(ModItems.CROWBAR.get());
         basicItem(ModItems.SMILER_TOOTH.get());

@@ -20,10 +20,10 @@ public class ModCreativeModTabs {
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Backcraft.MODID);
     public static final Supplier<CreativeModeTab> BACKCRAFT_TAB =
             CREATIVE_MODE_TABS.register("backcraft_tab",()->CreativeModeTab.builder()
-                    .icon(()->new ItemStack(ModItems.ALMOND_WATER.get()))
+                    .icon(()->new ItemStack(ModItems.CROWBAR.get()))
                     .title(Component.translatable("itemGroup.backcraft_tab"))
                     .displayItems((parameters,output)->{
-                        output.accept(ModItems.ALMOND_WATER);
+                        //output.accept(ModItems.ALMOND_WATER);
                         output.accept(ModBlocks.YELLOW_WALL);
                         output.accept(ModItems.DUMB_GUM);
                         output.accept(ModItems.A_BOX_OF_DUMB_GUM);

@@ -118,4 +118,5 @@ public class SmilerModel<T extends Entity> extends EntityModel<T> {
 		bone2.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
 		bone3.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
 	}
+    //TODO:更改笑魇建模
 }

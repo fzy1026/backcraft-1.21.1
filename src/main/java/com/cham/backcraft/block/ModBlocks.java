@@ -23,9 +23,9 @@ public class ModBlocks {
     public static final DeferredBlock<Block> YELLOW_WALL =
             registerBlock("yellow_wall",()->new Block(Block.Properties.ofFullCopy(Blocks.YELLOW_WOOL)));
     public static final DeferredBlock<Block> FIRE_SALT_ORE =
-            registerBlock("fire_salt_ore",()->new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_ORE)));
+            registerBlock("fire_salt_ore",()->new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_QUARTZ_ORE)));
     public static final DeferredBlock<Block> FIRE_SALT_BLOCK =
-            registerBlock("fire_salt_block",()->new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+            registerBlock("fire_salt_block",()->new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_BLOCK)));
     public static final DeferredBlock<SkeletonBlock> SKELETON_BLOCK =
             registerBlock("skeleton_block",()->new SkeletonBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.SAND)                    .instrument(NoteBlockInstrument.XYLOPHONE)

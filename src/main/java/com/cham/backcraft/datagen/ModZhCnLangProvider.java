@@ -12,9 +12,17 @@ public class ModZhCnLangProvider extends LanguageProvider {
     public ModZhCnLangProvider(PackOutput output){
         super(output, Backcraft.MODID,"zh_cn");
     }
+    public void addPotionTranslations(String id,String name){
+        add("item.minecraft.potion.effect."+id,name);
+        add("item.minecraft.splash_potion.effect."+id,"喷溅型"+ name);
+        add("item.minecraft.lingering_potion.effect."+id,"滞留型"+name);
+        add("item.minecraft.tipped_arrow.effect."+id,name+"药箭");
+    }
 
     @Override
     protected void addTranslations() {
+
+
         add(ModItems.A_BOX_OF_DUMB_GUM.get(),"一盒傻瓜口香糖");
         add(ModItems.DUMB_GUM.get(),"傻瓜口香糖");
         add(ModItems.FIRE_SALT.get(),"火盐");
@@ -35,10 +43,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.SMILER_SPAWN_EGG.get(),"笑魇刷怪蛋");
 
         add("itemGroup.backcraft_tab","我的后室");
-        add("item.minecraft.potion.effect.almond_water","杏仁水");
-        add("item.minecraft.splash_potion.effect.almond_water","喷溅型杏仁水");
-        add("item.minecraft.lingering_potion.effect.almond_water","滞留型杏仁水");
-        add("item.minecraft.tipped_arrow.effect.almond_water","杏仁水药箭");
+
+        addPotionTranslations("almond_water","杏仁水");
 
     }
 }

@@ -35,4 +35,9 @@ public class Smiler extends PathfinderMob {
                 .add(Attributes.ATTACK_DAMAGE,6.0D)
                 .add(Attributes.FOLLOW_RANGE,20.0D);
     }
+
+    @Override
+    protected int getBaseExperienceReward() {
+        return 10;
+    }
 }

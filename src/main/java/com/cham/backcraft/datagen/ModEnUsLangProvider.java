@@ -15,6 +15,13 @@ public class ModEnUsLangProvider extends LanguageProvider {
         super(output, Backcraft.MODID,"en_us");
     }
 
+    public void addPotionTranslations(String id,String name){
+        add("item.minecraft.potion.effect."+id,name);
+        add("item.minecraft.splash_potion.effect."+id,"Splash "+ name);
+        add("item.minecraft.lingering_potion.effect."+id,"Lingering "+name);
+        add("item.minecraft.tipped_arrow.effect."+id,name+" Tipped Arrow");
+    }
+
     @Override
     protected void addTranslations() {
         add(ModItems.A_BOX_OF_DUMB_GUM.get(),"A Box Of Dumb Gum");
@@ -34,10 +41,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
 
         add(ModEntityRegister.SMILER.get(),"Smiler");
         add(ModItems.SMILER_SPAWN_EGG.get(),"Smiler Spawn Egg");
-        add("item.minecraft.potion.effect.almond_water","Almond Water");
-        add("item.minecraft.splash_potion.effect.almond_water","Splash Almond Water");
-        add("item.minecraft.lingering_potion.effect.almond_water","Lingering Almond Water");
-        add("item.minecraft.tipped_arrow.effect.almond_water","Almond Water Tipped Arrow");
+
+        addPotionTranslations("almond_water","Almond Water");
 
 
 

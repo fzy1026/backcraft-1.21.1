@@ -34,6 +34,7 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.SMILER_SPAWN_EGG);
                         output.accept(ModBlocks.SKELETON_BLOCK);
                         output.accept(ModItems.SMILER_TOOTH);
+                        output.accept(ModItems.ROYAL_RATIONS);
                     })
                     .build());
 }

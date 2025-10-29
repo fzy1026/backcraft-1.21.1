@@ -1,9 +1,13 @@
 package com.cham.backcraft;
 
 import com.cham.backcraft.block.ModBlocks;
+import com.cham.backcraft.effect.ModEffectEvents;
 import com.cham.backcraft.effect.ModMobEffects;
+import com.cham.backcraft.enchantment.ModEnchantmentEventHandler;
+import com.cham.backcraft.enchantment.ModEnchantmentHelper;
 import com.cham.backcraft.entity.ModEntityRegister;
 import com.cham.backcraft.entity.smiler.Smiler;
+import com.cham.backcraft.entity.smiler.SmilerRenderEventHandler;
 import com.cham.backcraft.item.ModCreativeModTabs;
 import com.cham.backcraft.item.ModItems;
 import com.cham.backcraft.item.ModPotions;
@@ -54,6 +58,9 @@ public class Backcraft {
         // Note that this is necessary if and only if we want *this* class (Backcraft) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
+        NeoForge.EVENT_BUS.register(ModEffectEvents.class);
+        NeoForge.EVENT_BUS.register(ModEnchantmentEventHandler.class);
+        modEventBus.register(SmilerRenderEventHandler.class);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -84,6 +91,7 @@ public class Backcraft {
             //event.accept(ModItems.ALMOND_WATER.get());
             event.accept(ModItems.DUMB_GUM.get());
             event.accept(ModItems.A_BOX_OF_DUMB_GUM.get());
+            event.accept(ModItems.ROYAL_RATIONS.get());
         }
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.YELLOW_WALL.get());

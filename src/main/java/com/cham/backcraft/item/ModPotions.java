@@ -23,6 +23,6 @@ public class ModPotions {
     }
 
     public static final Supplier<Potion> ALMOND_WATER =
-            POTIONS.register("almond_water",()->new Potion(new MobEffectInstance(ModMobEffects.EffectHolder(ModMobEffects.IMMUNITY),3600,0)));
+            POTIONS.register("almond_water",()->new Potion(new MobEffectInstance(ModMobEffects.IMMUNITY,3600,0)));
 
 }

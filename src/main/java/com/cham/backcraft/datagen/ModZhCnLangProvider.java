@@ -3,6 +3,7 @@ package com.cham.backcraft.datagen;
 import com.cham.backcraft.Backcraft;
 import com.cham.backcraft.block.ModBlocks;
 import com.cham.backcraft.effect.ModMobEffects;
+import com.cham.backcraft.enchantment.ModEnchantments;
 import com.cham.backcraft.entity.ModEntityRegister;
 import com.cham.backcraft.item.ModItems;
 import net.minecraft.data.PackOutput;
@@ -29,8 +30,12 @@ public class ModZhCnLangProvider extends LanguageProvider {
         //add(ModItems.ALMOND_WATER.get(),"杏仁水");
         add(ModItems.CROWBAR.get(),"撬棍");
         add(ModItems.SMILER_TOOTH.get(),"笑魇牙");
+        add(ModItems.ROYAL_RATIONS.get(),"皇家口粮");
+
 
         add(ModMobEffects.IMMUNITY.get(),"免疫");
+        add(ModMobEffects.DIZZINESS.get(),"晕眩");
+
 
 
         add(ModBlocks.FIRE_SALT_ORE.get(),"火盐矿石");
@@ -42,9 +47,10 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModEntityRegister.SMILER.get(),"笑魇");
         add(ModItems.SMILER_SPAWN_EGG.get(),"笑魇刷怪蛋");
 
-        add("itemGroup.backcraft_tab","我的后室");
-
         addPotionTranslations("almond_water","杏仁水");
+
+        add("itemGroup.backcraft_tab","我的后室");
+        add("enchantment.backcraft.stun","击晕");
 
     }
 }

@@ -1,0 +1,37 @@
+package com.cham.backcraft.enchantment;
+
+import com.cham.backcraft.effect.ModMobEffects;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
+
+public class ModEnchantmentEventHandler {
+    @SubscribeEvent
+    public static void StunEvent(LivingDamageEvent.Pre event)
+    {
+        DamageSource source = event.getSource();
+        Entity entity  = event.getEntity();
+        if(source.getEntity() instanceof Player player && entity instanceof LivingEntity target)
+        {
+            ItemStack itemStack = player.getMainHandItem();
+            if(ModEnchantmentHelper.getEnchantmentLevel(itemStack,ModEnchantments.STUN) > 0)
+            {
+                int level = ModEnchantmentHelper.getEnchantmentLevel(itemStack,ModEnchantments.STUN);
+                double chance = level * 0.16;
+                if(chance > 1)
+                    chance = 1;
+                int effectTime = level * 20;
+                if(effectTime >= 60)
+                    effectTime = 60;
+                if(target.getRandom().nextFloat() < chance){
+                    target.addEffect(new MobEffectInstance(ModMobEffects.DIZZINESS,effectTime,level-1,false,true));
+                }
+            }
+        }
+    }
+}

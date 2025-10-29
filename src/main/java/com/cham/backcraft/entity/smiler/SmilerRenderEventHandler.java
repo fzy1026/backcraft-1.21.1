@@ -1,19 +1,15 @@
-package com.cham.backcraft;
+package com.cham.backcraft.entity.smiler;
 
-import com.cham.backcraft.entity.smiler.SmilerModel;
-import com.cham.backcraft.entity.smiler.SmilerRenderer;
-import net.neoforged.api.distmarker.Dist;
+import com.cham.backcraft.entity.ModEntityRegister;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 
-@EventBusSubscriber(modid = Backcraft.MODID,bus = EventBusSubscriber.Bus.MOD,value = Dist.CLIENT)
-public class ClientEventHandler {
+public class SmilerRenderEventHandler {
 
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event){
         event.registerEntityRenderer(
-                com.cham.backcraft.entity.ModEntityRegister.getSmilerType(),
+                ModEntityRegister.getSmilerType(),
                 SmilerRenderer::new
         );
     }

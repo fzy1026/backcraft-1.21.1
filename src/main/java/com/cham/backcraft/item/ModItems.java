@@ -2,13 +2,10 @@ package com.cham.backcraft.item;
 
 import com.cham.backcraft.Backcraft;
 import com.cham.backcraft.entity.ModEntityRegister;
-import com.mojang.blaze3d.shaders.Effect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
-import net.minecraft.world.item.alchemy.Potion;
-import net.minecraft.world.item.alchemy.Potions;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -50,8 +47,22 @@ public class ModItems {
             ITEMS.register("fire_salt", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> A_BOX_OF_DUMB_GUM =
             ITEMS.register("a_box_of_dumb_gum", () -> new Item(new Item.Properties()));
-    public static final DeferredItem<SwordItem> CROWBAR =
-            ITEMS.register("crowbar", () -> new SwordItem(Tiers.IRON, new Item.Properties().attributes(SwordItem.createAttributes(Tiers.IRON, 7, -3.5F))));
+    public static final DeferredItem<CrowbarItem> CROWBAR =
+            ITEMS.register("crowbar", () -> new CrowbarItem(Tiers.IRON, new Item.Properties().attributes(CrowbarItem.createAttributes(Tiers.IRON, 7, -3.5F))));
     public static final DeferredItem<Item> SMILER_TOOTH =
             ITEMS.register("smiler_tooth",()->new Item(new Item.Properties()));
+    public static final DeferredItem<Item> ROYAL_RATIONS =
+            ITEMS.register(
+                    "royal_rations",
+                    ()-> new Item(
+                            new Item.Properties().food(
+                            new FoodProperties.Builder()
+                                    .nutrition(14)
+                                    .saturationModifier(20)
+                                    .fast()
+                                    .effect(new MobEffectInstance(MobEffects.REGENERATION,300,0),1.0F)
+                                    .build()
+                            )
+                    )
+            );
 }

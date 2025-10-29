@@ -48,7 +48,7 @@ public class ModItems {
     public static final DeferredItem<Item> A_BOX_OF_DUMB_GUM =
             ITEMS.register("a_box_of_dumb_gum", () -> new Item(new Item.Properties()));
     public static final DeferredItem<CrowbarItem> CROWBAR =
-            ITEMS.register("crowbar", () -> new CrowbarItem(Tiers.IRON, new Item.Properties().attributes(CrowbarItem.createAttributes(Tiers.IRON, 7, -3.5F))));
+            ITEMS.register("crowbar", () -> new CrowbarItem(Tiers.IRON,new Item.Properties().attributes(CrowbarItem.createAttributes(Tiers.IRON, 7, -3.5F))));
     public static final DeferredItem<Item> SMILER_TOOTH =
             ITEMS.register("smiler_tooth",()->new Item(new Item.Properties()));
     public static final DeferredItem<Item> ROYAL_RATIONS =

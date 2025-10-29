@@ -23,12 +23,14 @@ public class CrowbarItem extends TieredItem {
 
     @Override
     public boolean isEnchantable(ItemStack stack) {
-        return stack.getCount() == 1;
+        return true;
     }
+
+
 
     @Override
     public int getEnchantmentValue() {
-        return 14;
+        return getTier().getEnchantmentValue();
     }
 
     @Override
@@ -82,5 +84,10 @@ public class CrowbarItem extends TieredItem {
     @Override
     public boolean canPerformAction(ItemStack stack, net.neoforged.neoforge.common.ItemAbility itemAbility) {
         return net.neoforged.neoforge.common.ItemAbilities.DEFAULT_SWORD_ACTIONS.contains(itemAbility);
+    }
+
+    @Override
+    public boolean isBookEnchantable(ItemStack stack, ItemStack book) {
+        return this.isEnchantable(stack);
     }
 }

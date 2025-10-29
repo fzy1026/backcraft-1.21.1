@@ -32,14 +32,15 @@ public class ModDataGenerator {
 
         generator.addProvider(event.includeServer(), new ModRecipesProvider(packOutput, lookupProvider));
 
+        generator.addProvider(event.includeServer(),new ModDatapackBuiltinEntriesProvider(packOutput,lookupProvider));
         BlockTagsProvider blockTagsProvider = new ModBlockTagsProvider(packOutput, lookupProvider, existingFileHelper);
         generator.addProvider(event.includeServer(), blockTagsProvider);
         generator.addProvider(event.includeServer(), new ModItemTagsProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
+        generator.addProvider(event.includeServer(), new ModEnchantmentTagsProvider(packOutput, lookupProvider, existingFileHelper));
 
         generator.addProvider(event.includeClient(), new ModItemModelsProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new ModBlockStatesProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new ModEnUsLangProvider(packOutput));
         generator.addProvider(event.includeClient(), new ModZhCnLangProvider(packOutput));
-        generator.addProvider(event.includeServer(),new ModDatapackBuiltinEntriesProvider(packOutput,lookupProvider));
     }
 }

@@ -36,12 +36,13 @@ public class ModEnchantments {
                 STUN,
                 Enchantment.enchantment(
                         Enchantment.definition(
+                                //itemHolderGetter.getOrThrow(ItemTags.WEAPON_ENCHANTABLE),
                                 itemHolderGetter.getOrThrow(ModItemTags.CROWBAR_TAG),
-                                3,
+                                10,
                                 5,
-                                Enchantment.dynamicCost(20, 9),
-                                Enchantment.dynamicCost(30, 7),
-                                8,
+                                Enchantment.dynamicCost(1, 11),
+                                Enchantment.dynamicCost(21, 8),
+                                1,
                                 EquipmentSlotGroup.MAINHAND
                         )
                 )

@@ -2,15 +2,11 @@ package com.cham.backcraft.enchantment;
 
 import com.cham.backcraft.Backcraft;
 import com.cham.backcraft.datagen.ModItemTags;
-import com.cham.backcraft.datagen.ModItemTagsProvider;
-import com.cham.backcraft.item.ModItems;
-import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.item.Item;

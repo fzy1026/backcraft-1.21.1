@@ -19,6 +19,9 @@ public class ModEnchantmentEventHandler {
         if(source.getEntity() instanceof Player player && entity instanceof LivingEntity target)
         {
             ItemStack itemStack = player.getMainHandItem();
+            //byd能晕就能杀还是太超模了
+            if(player.getAttackStrengthScale(0.0F) < 1.0F)
+                return;
             if(ModEnchantmentHelper.getEnchantmentLevel(itemStack,ModEnchantments.STUN) > 0)
             {
                 int level = ModEnchantmentHelper.getEnchantmentLevel(itemStack,ModEnchantments.STUN);

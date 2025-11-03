@@ -25,12 +25,10 @@ public class ModEnchantmentEventHandler {
             if(ModEnchantmentHelper.getEnchantmentLevel(itemStack,ModEnchantments.STUN) > 0)
             {
                 int level = ModEnchantmentHelper.getEnchantmentLevel(itemStack,ModEnchantments.STUN);
-                double chance = level * 0.16;
+                double chance = 0.3 + level*0.1;
                 if(chance > 1)
                     chance = 1;
-                int effectTime = level * 20;
-                if(effectTime >= 60)
-                    effectTime = 60;
+                int effectTime = level * 10;
                 if(target.getRandom().nextFloat() < chance){
                     target.addEffect(new MobEffectInstance(ModMobEffects.DIZZINESS,effectTime,level-1,false,true));
                 }

@@ -65,4 +65,6 @@ public class ModItems {
                             )
                     )
             );
+    public static final DeferredItem<Item> DEATHMOTH_SCALES =
+            ITEMS.register("deathmoth_scales",()->new Item(new Item.Properties()));
 }

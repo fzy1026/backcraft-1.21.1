@@ -23,7 +23,6 @@ public class ModCreativeModTabs {
                     .icon(()->new ItemStack(ModItems.CROWBAR.get()))
                     .title(Component.translatable("itemGroup.backcraft_tab"))
                     .displayItems((parameters,output)->{
-                        //output.accept(ModItems.ALMOND_WATER);
                         output.accept(ModBlocks.YELLOW_WALL);
                         output.accept(ModItems.DUMB_GUM);
                         output.accept(ModItems.A_BOX_OF_DUMB_GUM);
@@ -35,6 +34,7 @@ public class ModCreativeModTabs {
                         output.accept(ModBlocks.SKELETON_BLOCK);
                         output.accept(ModItems.SMILER_TOOTH);
                         output.accept(ModItems.ROYAL_RATIONS);
+                        output.accept(ModItems.DEATHMOTH_SCALES);
                     })
                     .build());
 }

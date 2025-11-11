@@ -47,6 +47,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModEntityRegister.SMILER.get(),"笑魇");
         add(ModItems.SMILER_SPAWN_EGG.get(),"笑魇刷怪蛋");
 
+        add(ModItems.DEATHMOTH_SCALES.get(),"死亡飞蛾鳞片");
+
         addPotionTranslations("almond_water","杏仁水");
 
         add("itemGroup.backcraft_tab","我的后室");

@@ -108,6 +108,7 @@ public class Backcraft {
         }
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
             event.accept(ModItems.SMILER_TOOTH);
+            event.accept(ModItems.DEATHMOTH_SCALES);
         }
     }
 

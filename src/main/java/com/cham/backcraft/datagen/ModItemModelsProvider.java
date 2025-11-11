@@ -20,6 +20,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.CROWBAR.get());
         basicItem(ModItems.SMILER_TOOTH.get());
         basicItem(ModItems.ROYAL_RATIONS.get());
+        basicItem(ModItems.DEATHMOTH_SCALES.get());
 
         withExistingParent(ModItems.SMILER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }

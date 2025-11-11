@@ -91,6 +91,15 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .requires(ModBlocks.SKELETON_BLOCK, 1)
                 .unlockedBy(getHasName(ModBlocks.SKELETON_BLOCK), has(ModBlocks.SKELETON_BLOCK))
                 .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, Items.SPECTRAL_ARROW,2)
+                .pattern(" # ")
+                .pattern("#*#")
+                .pattern(" # ")
+                .define('#', ModItems.DEATHMOTH_SCALES)
+                .define('*',Items.ARROW)
+                .unlockedBy(getHasName(ModItems.DEATHMOTH_SCALES), has(ModItems.DEATHMOTH_SCALES))
+                .save(recipeOutput);
     }
 
     //熔炉配方生成

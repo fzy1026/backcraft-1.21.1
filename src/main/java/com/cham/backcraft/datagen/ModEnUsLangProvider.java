@@ -44,6 +44,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModEntityRegister.SMILER.get(),"Smiler");
         add(ModItems.SMILER_SPAWN_EGG.get(),"Smiler Spawn Egg");
 
+        add(ModItems.DEATHMOTH_SCALES.get(),"Deathmoth Scales");
+
         addPotionTranslations("almond_water","Almond Water");
 
 

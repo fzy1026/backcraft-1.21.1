@@ -51,6 +51,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
 
         add("itemGroup.backcraft_tab","Backcraft");
         add("enchantment.backcraft.stun","Stun");
+        add("enchantment.backcraft.lengthen","加长");
 
 
     }

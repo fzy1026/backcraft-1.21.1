@@ -51,6 +51,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
 
         add("itemGroup.backcraft_tab","我的后室");
         add("enchantment.backcraft.stun","击晕");
+        add("enchantment.backcraft.lengthen","加长");
 
     }
 }

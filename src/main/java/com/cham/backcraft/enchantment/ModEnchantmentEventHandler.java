@@ -29,6 +29,7 @@ public class ModEnchantmentEventHandler {
                 if(chance > 1)
                     chance = 1;
                 int effectTime = level * 10;
+
                 if(target.getRandom().nextFloat() < chance){
                     target.addEffect(new MobEffectInstance(ModMobEffects.DIZZINESS,effectTime,level-1,false,true));
                 }

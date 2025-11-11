@@ -11,7 +11,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TieredItem;
@@ -22,8 +21,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
-import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.common.Tags;
+import org.jetbrains.annotations.NotNull;
 
 public class CrowbarItem extends TieredItem {
 
@@ -32,7 +30,7 @@ public class CrowbarItem extends TieredItem {
     }
 
     @Override
-    public boolean isEnchantable(ItemStack stack) {
+    public boolean isEnchantable(@NotNull ItemStack stack) {
         return true;
     }
 
@@ -43,12 +41,12 @@ public class CrowbarItem extends TieredItem {
     }
 
     @Override
-    public boolean canEquip(ItemStack stack, EquipmentSlot armorType, LivingEntity entity) {
+    public boolean canEquip(@NotNull ItemStack stack,@NotNull  EquipmentSlot armorType,@NotNull  LivingEntity entity) {
         return super.canEquip(stack, armorType, entity);
     }
 
     @Override
-    public boolean mineBlock(ItemStack stack, Level level, BlockState state, BlockPos pos, LivingEntity miningEntity) {
+    public boolean mineBlock(@NotNull ItemStack stack, Level level,@NotNull  BlockState state,@NotNull  BlockPos pos,@NotNull  LivingEntity miningEntity) {
         // 如果不是在客户端，并且方块不是"瞬间破坏"的，就消耗耐久
         if (!level.isClientSide && state.getDestroySpeed(level, pos) != 0.0F) {
             stack.hurtAndBreak(2, miningEntity,
@@ -59,41 +57,37 @@ public class CrowbarItem extends TieredItem {
 
 
     @Override
-    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+    public boolean hurtEnemy(ItemStack stack,@NotNull  LivingEntity target,@NotNull  LivingEntity attacker) {
         stack.hurtAndBreak(1, attacker,
                 EquipmentSlot.MAINHAND);
         return true;
     }
 
     @Override
-    public float getDestroySpeed(ItemStack stack, BlockState state) {
-        if(state.is(BlockTags.DOORS)){
+    public float getDestroySpeed(@NotNull ItemStack stack, BlockState state) {
+        if (state.is(BlockTags.DOORS)) {
             return 10.0F;
         }
         return 1.0F;
     }
 
     @Override
-    public InteractionResult useOn(UseOnContext context) {
-        // 撬棍的特殊交互功能
+    public @NotNull InteractionResult useOn(UseOnContext context) {
         Level level = context.getLevel();
         BlockPos pos = context.getClickedPos();
         BlockState state = level.getBlockState(pos);
         Player player = context.getPlayer();
 
-        // 例如：快速打开铁门
         if (state.is(Blocks.IRON_DOOR)) {
-            if(player != null) {
+            if (player != null) {
                 BlockState newState = state.cycle(DoorBlock.OPEN);
                 level.setBlock(pos, newState, 3);
 
-                // 播放开关声音
                 boolean isOpen = newState.getValue(DoorBlock.OPEN);
                 level.playSound(null, pos,
                         isOpen ? SoundEvents.IRON_DOOR_OPEN : SoundEvents.IRON_DOOR_CLOSE,
                         SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
 
-                // 触发游戏事件
                 level.gameEvent(player, isOpen ? GameEvent.BLOCK_OPEN : GameEvent.BLOCK_CLOSE, pos);
 
                 context.getItemInHand().hurtAndBreak(5, player,
@@ -110,9 +104,7 @@ public class CrowbarItem extends TieredItem {
         return createAttributes(tier, (float) attackDamage, attackSpeed);
     }
 
-    /**
-     * Neo: Method overload to allow giving a float for damage instead of an int.
-     */
+
     public static ItemAttributeModifiers createAttributes(Tier tier, float attackDamage, float attackSpeed) {
         return ItemAttributeModifiers.builder()
                 .add(
@@ -131,25 +123,19 @@ public class CrowbarItem extends TieredItem {
     }
 
     @Override
-    public boolean canAttackBlock(BlockState state, Level level, BlockPos pos, Player player) {
+    public boolean canAttackBlock(@NotNull BlockState state,@NotNull Level level, @NotNull BlockPos pos, Player player) {
         return !player.isCreative();
     }
 
 
     @Override
-    public void postHurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+    public void postHurtEnemy(ItemStack stack, @NotNull LivingEntity target, @NotNull LivingEntity attacker) {
         stack.hurtAndBreak(1, attacker, EquipmentSlot.MAINHAND);
     }
 
-    /*
-    @Override
-    public boolean canPerformAction(ItemStack stack, net.neoforged.neoforge.common.ItemAbility itemAbility) {
-        return net.neoforged.neoforge.common.ItemAbilities.DEFAULT_SWORD_ACTIONS.contains(itemAbility);
-    }
-     */
 
     @Override
-    public boolean isBookEnchantable(ItemStack stack, ItemStack book) {
+    public boolean isBookEnchantable(@NotNull ItemStack stack,@NotNull ItemStack book) {
         return this.isEnchantable(stack);
     }
 }

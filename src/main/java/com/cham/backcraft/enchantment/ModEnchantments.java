@@ -9,8 +9,14 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.entity.EquipmentSlotGroup;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
+import net.minecraft.world.item.enchantment.LevelBasedValue;
+import net.minecraft.world.item.enchantment.effects.AddValue;
+import net.minecraft.world.item.enchantment.effects.EnchantmentAttributeEffect;
 import net.minecraft.world.level.block.Block;
 
 public class ModEnchantments {
@@ -32,10 +38,9 @@ public class ModEnchantments {
                 STUN,
                 Enchantment.enchantment(
                         Enchantment.definition(
-                                //itemHolderGetter.getOrThrow(ItemTags.WEAPON_ENCHANTABLE),
                                 itemHolderGetter.getOrThrow(ModItemTags.CROWBAR_TAG),
                                 10,
-                                5,
+                                3,
                                 Enchantment.dynamicCost(1, 11),
                                 Enchantment.dynamicCost(21, 8),
                                 1,
@@ -44,7 +49,34 @@ public class ModEnchantments {
                 )
         );
 
+        register(
+                context,
+                LENGTHEN,
+                Enchantment.enchantment(
+                                Enchantment.definition(
+                                        itemHolderGetter.getOrThrow(ModItemTags.CROWBAR_TAG),
+                                        10,
+                                        2,
+                                        Enchantment.dynamicCost(1, 11),
+                                        Enchantment.dynamicCost(21, 8),
+                                        1,
+                                        EquipmentSlotGroup.MAINHAND
+                                )
+
+                        )
+                        .withEffect(
+                                EnchantmentEffectComponents.ATTRIBUTES,
+                                new EnchantmentAttributeEffect(
+                                        ResourceLocation.fromNamespaceAndPath(Backcraft.MODID,"backcraft.lengthen"),
+                                        Attributes.ENTITY_INTERACTION_RANGE,
+                                        LevelBasedValue.perLevel(0.25F),
+                                        AttributeModifier.Operation.ADD_VALUE
+                                )
+                        )
+        );
+
     }
 
     public static final ResourceKey<Enchantment> STUN = key("stun");
+    public static final ResourceKey<Enchantment> LENGTHEN = key("lengthen");
 }

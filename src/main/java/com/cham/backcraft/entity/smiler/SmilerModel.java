@@ -68,12 +68,12 @@ public class SmilerModel<T extends Entity> extends HierarchicalModel<T> {
 		PartDefinition eye1 = partdefinition.addOrReplaceChild("eye1", CubeListBuilder.create().texOffs(4, 12).addBox(-0.5F, -2.0F, -2.75F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
 		.texOffs(12, 6).addBox(-0.5F, -2.0F, -1.75F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
 		.texOffs(8, 12).addBox(-0.5F, -3.0F, -1.75F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
-		.texOffs(12, 8).addBox(-0.5F, -3.0F, -2.75F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.5F, 0.0F, 0.75F));
+		.texOffs(12, 8).addBox(-0.5F, -3.0F, -2.75F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.5F, 0.0F, 0.75F, 0.0F, -1.5708F, 0.0F));
 
 		PartDefinition eye2 = partdefinition.addOrReplaceChild("eye2", CubeListBuilder.create().texOffs(12, 10).addBox(-0.5F, -2.25F, 0.5F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
 		.texOffs(12, 12).addBox(-0.5F, -2.25F, 1.5F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
 		.texOffs(0, 13).addBox(-0.5F, -3.25F, 1.5F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
-		.texOffs(4, 14).addBox(-0.5F, -3.25F, 0.5F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.5F, 0.0F, 0.75F));
+		.texOffs(4, 14).addBox(-0.5F, -3.25F, 0.5F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.5F, 0.0F, 0.75F, 0.0F, -1.5708F, 0.0F));
 
 		PartDefinition upteeth = partdefinition.addOrReplaceChild("upteeth", CubeListBuilder.create().texOffs(4, 3).addBox(-0.5F, -1.75F, 4.75F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
 		.texOffs(4, 0).addBox(-0.5F, -0.75F, 3.25F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
@@ -82,7 +82,7 @@ public class SmilerModel<T extends Entity> extends HierarchicalModel<T> {
 		.texOffs(8, 14).addBox(-0.5F, 1.0F, -1.25F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
 		.texOffs(4, 6).addBox(-0.5F, 0.5F, -2.75F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
 		.texOffs(0, 7).addBox(-0.5F, -0.25F, -4.25F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
-		.texOffs(8, 0).addBox(-0.5F, -1.75F, -5.75F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.5F, 0.0F, 0.75F));
+		.texOffs(8, 0).addBox(-0.5F, -1.75F, -5.75F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.5F, 0.0F, 0.75F, 0.0F, -1.5708F, 0.0F));
 
 		PartDefinition downteeth = partdefinition.addOrReplaceChild("downteeth", CubeListBuilder.create().texOffs(8, 3).addBox(-0.5F, -0.25F, -5.75F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
 		.texOffs(0, 0).addBox(-0.5F, 2.5F, -1.25F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
@@ -91,7 +91,7 @@ public class SmilerModel<T extends Entity> extends HierarchicalModel<T> {
 		.texOffs(8, 9).addBox(-0.5F, 0.5F, 3.25F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
 		.texOffs(0, 10).addBox(-0.5F, -0.25F, 4.75F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
 		.texOffs(12, 0).addBox(-0.5F, 2.0F, -2.75F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
-		.texOffs(12, 3).addBox(-0.5F, 1.0F, -4.25F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.5F, 0.0F, 0.75F));
+		.texOffs(12, 3).addBox(-0.5F, 1.0F, -4.25F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.5F, 0.0F, 0.75F, 0.0F, -1.5708F, 0.0F));
 
 		return LayerDefinition.create(meshdefinition, 16, 16);
 	}

@@ -28,7 +28,6 @@ public class Smiler extends Monster {
         this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.0D, true));
         this.goalSelector.addGoal(3,new LookAtPlayerGoal(this, Player.class,16.0F));
         this.goalSelector.addGoal(4,new RandomLookAroundGoal(this));
-
         this.targetSelector.addGoal(2,new NearestAttackableTargetGoal<>(this, Player.class,true));
     }
 

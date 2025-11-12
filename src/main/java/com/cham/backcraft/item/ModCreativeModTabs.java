@@ -35,6 +35,7 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.SMILER_TOOTH);
                         output.accept(ModItems.ROYAL_RATIONS);
                         output.accept(ModItems.DEATHMOTH_SCALES);
+                        output.accept(ModItems.WINDOW_SPAWN_EGG);
                     })
                     .build());
 }

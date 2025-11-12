@@ -9,10 +9,11 @@ public class SmilerRenderEventHandler {
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event){
         event.registerEntityRenderer(
-                ModEntityRegister.getSmilerType(),
+                ModEntityRegister.SMILER.get(),
                 SmilerRenderer::new
         );
     }
+
 
     @SubscribeEvent
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event){
@@ -21,4 +22,5 @@ public class SmilerRenderEventHandler {
                 SmilerModel::createBodyLayer
         );
     }
+
 }

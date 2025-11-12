@@ -4,30 +4,26 @@ import com.cham.backcraft.block.ModBlocks;
 import com.cham.backcraft.effect.ModEffectEvents;
 import com.cham.backcraft.effect.ModMobEffects;
 import com.cham.backcraft.enchantment.ModEnchantmentEventHandler;
-import com.cham.backcraft.enchantment.ModEnchantmentHelper;
 import com.cham.backcraft.entity.ModEntityRegister;
-import com.cham.backcraft.entity.smiler.Smiler;
 import com.cham.backcraft.entity.smiler.SmilerRenderEventHandler;
+import com.cham.backcraft.entity.window.WindowRenderEventHandler;
 import com.cham.backcraft.item.ModCreativeModTabs;
 import com.cham.backcraft.item.ModItems;
 import com.cham.backcraft.item.ModPotions;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
-import org.slf4j.Logger;
-
 import com.mojang.logging.LogUtils;
-
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
-import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(Backcraft.MODID)
@@ -37,13 +33,6 @@ public class Backcraft {
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    private void addEntityAttributes(EntityAttributeCreationEvent event){
-        event.put(
-                ModEntityRegister.getSmilerType(),
-                Smiler.createAttributes().build()
-        );
-    }
-
     public Backcraft(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
         ModMobEffects.register(modEventBus);
@@ -52,7 +41,6 @@ public class Backcraft {
         ModItems.register(modEventBus);
         ModCreativeModTabs.register(modEventBus);
         ModPotions.register(modEventBus);
-        modEventBus.addListener(this::addEntityAttributes);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (Backcraft) to respond directly to events.
@@ -61,6 +49,7 @@ public class Backcraft {
         NeoForge.EVENT_BUS.register(ModEffectEvents.class);
         NeoForge.EVENT_BUS.register(ModEnchantmentEventHandler.class);
         modEventBus.register(SmilerRenderEventHandler.class);
+        modEventBus.register(WindowRenderEventHandler.class);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -84,7 +73,7 @@ public class Backcraft {
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
 
-        if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS){
+        if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(ModBlocks.FIRE_SALT_ORE.get());
         }
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
@@ -97,16 +86,17 @@ public class Backcraft {
             event.accept(ModBlocks.YELLOW_WALL.get());
             event.accept(ModBlocks.SKELETON_BLOCK.get());
         }
-        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.FIRE_SALT.get());
         }
-        if(event.getTabKey() == CreativeModeTabs.SPAWN_EGGS){
+        if (event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
             event.accept(ModItems.SMILER_SPAWN_EGG);
+            event.accept(ModItems.WINDOW_SPAWN_EGG);
         }
-        if(event.getTabKey() == CreativeModeTabs.COMBAT){
+        if (event.getTabKey() == CreativeModeTabs.COMBAT) {
             event.accept(ModItems.CROWBAR);
         }
-        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.SMILER_TOOTH);
             event.accept(ModItems.DEATHMOTH_SCALES);
         }

@@ -32,6 +32,8 @@ public class ModItems {
             )));
     public static final DeferredItem<SpawnEggItem> SMILER_SPAWN_EGG =
             ITEMS.register("smiler_spawn_egg", () -> new SpawnEggItem(ModEntityRegister.SMILER.get(), 0x000000, 0xffe0e2, new Item.Properties()));
+    public static final DeferredItem<SpawnEggItem> WINDOW_SPAWN_EGG =
+            ITEMS.register("window_spawn_egg", () -> new SpawnEggItem(ModEntityRegister.WINDOW.get(), 0x000000, 0xffe0e2, new Item.Properties()));
 
     /*
     食物相关构建函数：

@@ -31,26 +31,18 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.CROWBAR.get(), "撬棍");
         add(ModItems.SMILER_TOOTH.get(), "笑魇牙");
         add(ModItems.ROYAL_RATIONS.get(), "皇家口粮");
-
-
         add(ModMobEffects.IMMUNITY.get(), "免疫");
         add(ModMobEffects.DIZZINESS.get(), "晕眩");
-
-
         add(ModBlocks.FIRE_SALT_ORE.get(), "火盐矿石");
         add(ModBlocks.YELLOW_WALL.get(), "黄色墙壁");
         add(ModBlocks.FIRE_SALT_BLOCK.get(), "火盐块");
         add(ModBlocks.SKELETON_BLOCK.get(), "骨架方块");
-
-
         add(ModEntityRegister.SMILER.get(), "笑魇");
         add(ModItems.SMILER_SPAWN_EGG.get(), "笑魇刷怪蛋");
-
         add(ModEntityRegister.WINDOW.get(), "窗户");
         add(ModItems.WINDOW_SPAWN_EGG.get(), "窗户刷怪蛋");
-
-
         add(ModItems.DEATHMOTH_SCALES.get(), "死亡飞蛾鳞片");
+        add(ModBlocks.CRATE.get(),"板条箱");
 
         addPotionTranslations("almond_water", "杏仁水");
 

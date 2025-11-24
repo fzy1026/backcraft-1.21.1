@@ -1,6 +1,7 @@
 package com.cham.backcraft;
 
 import com.cham.backcraft.block.ModBlocks;
+import com.cham.backcraft.blockEntity.ModBlockEntity;
 import com.cham.backcraft.effect.ModEffectEvents;
 import com.cham.backcraft.effect.ModMobEffects;
 import com.cham.backcraft.enchantment.ModEnchantmentEventHandler;
@@ -35,6 +36,7 @@ public class Backcraft {
 
     public Backcraft(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
+        ModBlockEntity.register(modEventBus);
         ModMobEffects.register(modEventBus);
         ModEntityRegister.register(modEventBus);
         ModBlocks.register(modEventBus);
@@ -85,6 +87,9 @@ public class Backcraft {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.YELLOW_WALL.get());
             event.accept(ModBlocks.SKELETON_BLOCK.get());
+        }
+        if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS){
+            event.accept(ModBlocks.CRATE);
         }
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.FIRE_SALT.get());

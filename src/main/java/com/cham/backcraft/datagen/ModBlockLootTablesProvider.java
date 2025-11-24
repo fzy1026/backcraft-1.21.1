@@ -31,6 +31,7 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.YELLOW_WALL.get());
         dropSelf(ModBlocks.SKELETON_BLOCK.get());
         dropSelf(ModBlocks.FIRE_SALT_BLOCK.get());
+        dropSelf(ModBlocks.CRATE.get());
         add(ModBlocks.FIRE_SALT_ORE.get(),
                 block -> createMultiplyOreDrop(ModBlocks.FIRE_SALT_ORE.get(),ModItems.FIRE_SALT.get(),1,4));
 

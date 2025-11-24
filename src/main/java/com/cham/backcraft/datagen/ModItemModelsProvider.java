@@ -23,5 +23,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.DEATHMOTH_SCALES.get());
 
         withExistingParent(ModItems.SMILER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.WINDOW_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+
     }
 }

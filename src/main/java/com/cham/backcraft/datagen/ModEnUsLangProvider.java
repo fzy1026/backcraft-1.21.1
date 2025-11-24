@@ -29,24 +29,19 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.CROWBAR.get(), "Crowbar");
         add(ModItems.SMILER_TOOTH.get(), "Smiler Tooth");
         add(ModItems.ROYAL_RATIONS.get(), "Royal Rations");
-
         add(ModMobEffects.IMMUNITY.get(), "Immunity");
         add(ModMobEffects.DIZZINESS.get(), "Dizziness");
-
-
         add(ModBlocks.FIRE_SALT_ORE.get(), "Fire Salt Ore");
         add(ModBlocks.YELLOW_WALL.get(), "Yellow Wall");
         add(ModBlocks.FIRE_SALT_BLOCK.get(), "Fire Salt Block");
         add(ModBlocks.SKELETON_BLOCK.get(), "Skeleton Block");
-
-
         add(ModEntityRegister.SMILER.get(), "Smiler");
         add(ModItems.SMILER_SPAWN_EGG.get(), "Smiler Spawn Egg");
-
         add(ModEntityRegister.WINDOW.get(), "Window");
         add(ModItems.WINDOW_SPAWN_EGG.get(), "Window Spawn Egg");
-
         add(ModItems.DEATHMOTH_SCALES.get(), "Deathmoth Scales");
+        add(ModBlocks.CRATE.get(),"crate");
+
 
         addPotionTranslations("almond_water", "Almond Water");
 

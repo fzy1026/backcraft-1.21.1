@@ -32,7 +32,13 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops()
                     .strength(2.0F)
                     .sound(SoundType.BONE_BLOCK)
+                    .noOcclusion()
             ));
+
+    public static final DeferredBlock<Block> CRATE =
+            registerBlock("crate",()->new CrateBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
+
+
 
     private static <T extends Block> void registerBlockItems(String name, DeferredBlock<T> block){
         ModItems.ITEMS.register(name,()->new BlockItem(block.get(),new Item.Properties()));

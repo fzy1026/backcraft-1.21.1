@@ -28,15 +28,25 @@ public class ModBlocks {
             registerBlock("fire_salt_block",()->new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_BLOCK)));
     public static final DeferredBlock<SkeletonBlock> SKELETON_BLOCK =
             registerBlock("skeleton_block",()->new SkeletonBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.SAND)                    .instrument(NoteBlockInstrument.XYLOPHONE)
-                    .requiresCorrectToolForDrops()
-                    .strength(2.0F)
-                    .sound(SoundType.BONE_BLOCK)
-                    .noOcclusion()
-            ));
+                            .mapColor(MapColor.SAND)
+                            .instrument(NoteBlockInstrument.XYLOPHONE)
+                            .requiresCorrectToolForDrops()
+                            .strength(2.0F)
+                            .sound(SoundType.BONE_BLOCK)
+                            .noOcclusion()
+                    )
+            );
 
     public static final DeferredBlock<Block> CRATE =
-            registerBlock("crate",()->new CrateBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
+            registerBlock("crate",()->new Block(BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.SAND)
+                            .instrument(NoteBlockInstrument.XYLOPHONE)
+                            .requiresCorrectToolForDrops()
+                            .strength(2.0F)
+                            .sound(SoundType.BONE_BLOCK)
+                            .noOcclusion()
+                    )
+            );
 
 
 

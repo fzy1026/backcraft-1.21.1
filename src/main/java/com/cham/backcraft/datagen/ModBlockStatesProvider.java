@@ -17,6 +17,8 @@ public class ModBlockStatesProvider extends BlockStateProvider {
         simpleBlockWithItem(ModBlocks.YELLOW_WALL.get(), cubeAll(ModBlocks.YELLOW_WALL.get()));
         simpleBlockWithItem(ModBlocks.FIRE_SALT_ORE.get(), cubeAll(ModBlocks.FIRE_SALT_ORE.get()));
         simpleBlockWithItem(ModBlocks.FIRE_SALT_BLOCK.get(), cubeAll(ModBlocks.FIRE_SALT_BLOCK.get()));
+        //simpleBlockWithItem(ModBlocks.CRATE.get(), cubeAll(ModBlocks.CRATE.get()));
+
         horizontalBlock(ModBlocks.SKELETON_BLOCK.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/skeleton_block")));
     }

@@ -30,7 +30,6 @@ public class ModBlocks {
             registerBlock("skeleton_block",()->new SkeletonBlock(BlockBehaviour.Properties.of()
                             .mapColor(MapColor.SAND)
                             .instrument(NoteBlockInstrument.XYLOPHONE)
-                            .requiresCorrectToolForDrops()
                             .strength(2.0F)
                             .sound(SoundType.BONE_BLOCK)
                             .noOcclusion()
@@ -38,15 +37,7 @@ public class ModBlocks {
             );
 
     public static final DeferredBlock<Block> CRATE =
-            registerBlock("crate",()->new Block(BlockBehaviour.Properties.of()
-                            .mapColor(MapColor.SAND)
-                            .instrument(NoteBlockInstrument.XYLOPHONE)
-                            .requiresCorrectToolForDrops()
-                            .strength(2.0F)
-                            .sound(SoundType.BONE_BLOCK)
-                            .noOcclusion()
-                    )
-            );
+            registerBlock("crate",()->new CrateBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
 
 
 

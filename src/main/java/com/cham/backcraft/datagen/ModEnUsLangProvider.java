@@ -48,7 +48,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
 
         add("itemGroup.backcraft_tab", "Backcraft");
         add("enchantment.backcraft.stun", "Stun");
-        add("enchantment.backcraft.lengthen", "加长");
+        add("enchantment.backcraft.lengthen", "Lengthen");
+        add("block_entity.backcraft.crate","Crate");
 
 
     }

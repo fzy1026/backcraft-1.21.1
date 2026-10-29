@@ -21,6 +21,7 @@ public class DizzinessEffect extends MobEffect {
     public boolean applyEffectTick(LivingEntity livingEntity, int amplifier) {
         if (livingEntity.getType() == EntityType.PLAYER) {
             amplifier += 1;
+
             float rotate_y_speed = amplifier * 8 * ((float) Math.random());
             float rotate_x_speed = amplifier * Mth.PI;
             livingEntity.setYRot(livingEntity.getYRot() + rotate_y_speed);
@@ -31,6 +32,9 @@ public class DizzinessEffect extends MobEffect {
             livingEntity.setXRot(70);
             livingEntity.setDeltaMovement(0, livingEntity.getDeltaMovement().y, 0);
         }
+        else{
+
+        }
         return true;
     }
 
@@ -39,13 +43,6 @@ public class DizzinessEffect extends MobEffect {
         return true;
     }
 
-    /*
-    public void onEffectRemoved(LivingEntity livingEntity, int amplifier) {
-        super.onEffectRemoved(livingEntity, amplifier);
-        if (livingEntity instanceof Mob mob) {
-            mob.setNoAi(false);
-        }
-    }
-    */
+
 
 }

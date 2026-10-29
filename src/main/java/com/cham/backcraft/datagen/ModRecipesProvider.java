@@ -57,7 +57,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .save(recipeOutput);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.A_BOX_OF_DUMB_GUM, 1)
-                .requires(ModItems.DUMB_GUM, 3)
+                .requires(ModItems.DUMB_GUM, 9)
                 .unlockedBy(getHasName(ModItems.DUMB_GUM), has(ModItems.DUMB_GUM))
                 .save(recipeOutput);
 

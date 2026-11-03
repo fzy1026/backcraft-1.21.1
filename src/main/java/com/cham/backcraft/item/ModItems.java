@@ -2,6 +2,7 @@ package com.cham.backcraft.item;
 
 import com.cham.backcraft.Backcraft;
 import com.cham.backcraft.entity.ModEntityRegister;
+import com.cham.backcraft.item.CrowbarItem.CrowbarItem;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
@@ -25,9 +26,9 @@ public class ModItems {
                     .nutrition(4)
                     .alwaysEdible()
                     .fast()
-                    .effect(new MobEffectInstance(MobEffects.BLINDNESS, 500, 0), 1.0F)
-                    .effect(new MobEffectInstance(MobEffects.WEAKNESS, 500, 0), 1.0F)
-                    .effect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 500, 0), 1.0F)
+                    .effect(()->new MobEffectInstance(MobEffects.BLINDNESS, 500, 0), 1.0F)
+                    .effect(()->new MobEffectInstance(MobEffects.WEAKNESS, 500, 0), 1.0F)
+                    .effect(()->new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 500, 0), 1.0F)
                     .build()
             )));
     public static final DeferredItem<SpawnEggItem> SMILER_SPAWN_EGG =
@@ -62,7 +63,7 @@ public class ModItems {
                                     .nutrition(14)
                                     .saturationModifier(20)
                                     .fast()
-                                    .effect(new MobEffectInstance(MobEffects.REGENERATION,300,0),1.0F)
+                                    .effect(()->new MobEffectInstance(MobEffects.REGENERATION,300,0),1.0F)
                                     .build()
                             )
                     )

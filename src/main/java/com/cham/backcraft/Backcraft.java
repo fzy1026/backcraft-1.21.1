@@ -8,6 +8,7 @@ import com.cham.backcraft.enchantment.ModEnchantmentEventHandler;
 import com.cham.backcraft.entity.ModEntityRegister;
 import com.cham.backcraft.entity.smiler.SmilerRenderEventHandler;
 import com.cham.backcraft.entity.window.WindowRenderEventHandler;
+import com.cham.backcraft.event.CommonEvents;
 import com.cham.backcraft.item.ModCreativeModTabs;
 import com.cham.backcraft.item.ModItems;
 import com.cham.backcraft.item.ModPotions;
@@ -50,6 +51,8 @@ public class Backcraft {
         NeoForge.EVENT_BUS.register(this);
         NeoForge.EVENT_BUS.register(ModEffectEvents.class);
         NeoForge.EVENT_BUS.register(ModEnchantmentEventHandler.class);
+        NeoForge.EVENT_BUS.register(CommonEvents.class);
+
         modEventBus.register(SmilerRenderEventHandler.class);
         modEventBus.register(WindowRenderEventHandler.class);
 

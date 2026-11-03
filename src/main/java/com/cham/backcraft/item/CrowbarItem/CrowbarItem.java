@@ -1,4 +1,4 @@
-package com.cham.backcraft.item;
+package com.cham.backcraft.item.CrowbarItem;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;

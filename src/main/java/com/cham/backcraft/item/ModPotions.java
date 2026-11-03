@@ -3,14 +3,10 @@ package com.cham.backcraft.item;
 import com.cham.backcraft.effect.ModMobEffects;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.alchemy.Potion;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.registries.DeferredItem;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import net.neoforged.neoforge.registries.NeoForgeRegistries;
-
-import java.util.function.Supplier;
 
 public class ModPotions {
 
@@ -22,7 +18,9 @@ public class ModPotions {
         POTIONS.register(eventBus);
     }
 
-    public static final Supplier<Potion> ALMOND_WATER =
+    public static final DeferredHolder<Potion,Potion> ALMOND_WATER =
             POTIONS.register("almond_water",()->new Potion(new MobEffectInstance(ModMobEffects.IMMUNITY,3600,0)));
+    public static final DeferredHolder<Potion,Potion> LIQUID_PAIN =
+            POTIONS.register("liquid_pain",()->new Potion(new MobEffectInstance(ModMobEffects.PAIN,3600,0)));
 
 }

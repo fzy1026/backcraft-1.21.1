@@ -18,5 +18,6 @@ public class ModMobEffects {
             EFFECTS.register("immunity", ImmunityEffect::new);
     public static final DeferredHolder<MobEffect, DizzinessEffect> DIZZINESS =
             EFFECTS.register("dizziness", DizzinessEffect::new);
-
+    public static final DeferredHolder<MobEffect,PainEffect> PAIN =
+            EFFECTS.register("pain", PainEffect::new);
 }

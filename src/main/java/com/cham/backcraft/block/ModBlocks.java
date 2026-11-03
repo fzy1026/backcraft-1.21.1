@@ -1,13 +1,11 @@
 package com.cham.backcraft.block;
 
 import com.cham.backcraft.Backcraft;
-import com.cham.backcraft.block.FireSaltBlock.FireSaltBlock;
 import com.cham.backcraft.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.FireBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;

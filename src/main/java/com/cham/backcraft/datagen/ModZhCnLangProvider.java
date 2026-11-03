@@ -33,6 +33,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.ROYAL_RATIONS.get(), "皇家口粮");
         add(ModMobEffects.IMMUNITY.get(), "免疫");
         add(ModMobEffects.DIZZINESS.get(), "晕眩");
+        add(ModMobEffects.PAIN.get(),"痛苦");
         add(ModBlocks.FIRE_SALT_ORE.get(), "火盐矿石");
         add(ModBlocks.YELLOW_WALL.get(), "黄色墙壁");
         add(ModBlocks.FIRE_SALT_BLOCK.get(), "火盐块");
@@ -45,6 +46,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.CRATE.get(),"板条箱");
 
         addPotionTranslations("almond_water", "杏仁水");
+        addPotionTranslations("liquid_pain","液态痛苦");
 
         add("itemGroup.backcraft_tab", "我的后室");
         add("enchantment.backcraft.stun", "击晕");

@@ -31,6 +31,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.ROYAL_RATIONS.get(), "Royal Rations");
         add(ModMobEffects.IMMUNITY.get(), "Immunity");
         add(ModMobEffects.DIZZINESS.get(), "Dizziness");
+        add(ModMobEffects.PAIN.get(), "Pain");
         add(ModBlocks.FIRE_SALT_ORE.get(), "Fire Salt Ore");
         add(ModBlocks.YELLOW_WALL.get(), "Yellow Wall");
         add(ModBlocks.FIRE_SALT_BLOCK.get(), "Fire Salt Block");
@@ -44,6 +45,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
 
 
         addPotionTranslations("almond_water", "Almond Water");
+        addPotionTranslations("liquid_pain", "Liquid Pain");
 
 
         add("itemGroup.backcraft_tab", "Backcraft");
